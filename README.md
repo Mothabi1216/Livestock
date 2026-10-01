@@ -1,14 +1,54 @@
-# Livestock
+# Livestock Health & Disease Tracking App
 
-Android livestock management application with farmer, veterinarian, and administrator workflows.
+An Android application designed to connect farmers with local veterinary professionals, enabling quick disease reporting, proximity-based vet matching, and local health record management.
 
-## Local setup
+## Tech Stack
 
-1. Open the project in Android Studio and let Gradle sync.
-2. Copy `email-secrets.properties.example` to `email-secrets.properties` in the project root.
-3. Set `SMTP_EMAIL` and `SMTP_PASSWORD` to your sender account and Gmail app password if email sending is needed.
-4. Build and run the `app` module. The project uses Android SDK 36 and requires Android 7.0 (API 24) or newer.
+* **Language:** Kotlin & Java
+* **IDE:** Android Studio
+* **Database:** SQLite / Room Database
+* **Architecture:** MVVM (Model-View-ViewModel) / Android Jetpack
 
-Local SDK paths, email credentials, signing keys, IDE state, and generated build output are excluded from Git. Without email settings the project can build, but email delivery requires valid credentials.
+---
 
-These settings keep credentials out of the repository; credentials used by the app are still packaged in its APK. A production deployment should send email through a backend service.
+## Key Features
+
+* **Farmer Portal:** Log disease reports, describe symptoms, and track report status.
+* **Nearby Vet Locator:** View and contact local veterinary doctors for fast response times.
+* **SQLite Offline Storage:** Store disease reports, animal profiles, and doctor directories locally on the device.
+* **Media Uploads:** Attach photo logs of livestock symptoms directly within the app.
+
+---
+
+## Getting Started
+
+### Prerequisites
+
+* Android Studio (Ladybug or newer recommended)
+* JDK 14 or higher
+* Android SDK (API Level 24+ recommended)
+* An Android Virtual Device (Emulator) or a physical Android device with USB debugging enabled
+
+### Build & Run Setup
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/Mothabi1216/Livestock.git
+   ```
+
+2. **Open in Android Studio:**
+   * Open Android Studio.
+   * Select **Open an Existing Project**.
+   * Navigate to the cloned directory and click **OK**.
+
+3. **Sync & Run:**
+   * Wait for Gradle sync to complete.
+   * Select your emulator/device and press **Shift + F10** or click the green **Run** button.
+
+---
+
+## Database Schema (SQLite)
+
+* **Farmers:** `id`, `name`, `location`, `phone`
+* **Vets:** `id`, `name`, `specialty`, `clinic_location`, `contact`
+* **Disease Reports:** `id`, `farmer_id`, `animal_type`, `symptoms`, `image_uri`, `status`, `assigned_vet_id`, `timestamp`
