@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/admin_dashboard" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/dark_grey"
+            android:elevation="8dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_back_my_reports"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Reports History"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="12dp"
+            android:backgroundTint="#26FFFFFF"
+            app:strokeColor="#33FFFFFF"
+            app:strokeWidth="1dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal">
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical">
+
+                    <TableLayout
+                        android:id="@+id/table_my_reports"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:stretchColumns="*">
+
+                        <TableRow
+                            android:id="@+id/table_header_reports"
+                            android:background="@color/dark_grey"
+                            android:paddingVertical="16dp"
+                            android:paddingHorizontal="8dp">
+                            <TextView android:text="ID" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="ANIMAL" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="DATE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="DISEASE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="VISIT DATE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="VET RESPONSE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="VET NAME" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                            <TextView android:text="CONFIRM VISIT" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" />
+                        </TableRow>
+                    </TableLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</FrameLayout>

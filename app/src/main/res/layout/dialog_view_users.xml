@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/admin_dashboard" />
+
+    <!-- Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header - Matching Add Vet style -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/dark_grey"
+            android:elevation="8dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_back_table"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:id="@+id/tv_table_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="System User Registry"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:letterSpacing="0.05"/>
+        </RelativeLayout>
+
+        <!-- Glass-morphism Table Container -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="12dp"
+            android:backgroundTint="#26FFFFFF"
+            app:strokeColor="#33FFFFFF"
+            app:strokeWidth="1dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal">
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical">
+
+                    <TableLayout
+                        android:id="@+id/table_users"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="8dp"
+                        android:stretchColumns="*">
+
+                        <!-- Header Row -->
+                        <TableRow
+                            android:background="@color/dark_grey"
+                            android:padding="16dp">
+                            <TextView android:text="PICTURE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:gravity="center" android:textSize="14sp"/>
+                            <TextView android:text="FULL NAMES" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:textSize="14sp"/>
+                            <TextView android:text="EMAIL ADDRESS" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:textSize="14sp"/>
+                            <TextView android:text="PHONE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:textSize="14sp"/>
+                            <TextView android:text="USER ROLE" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:textSize="14sp"/>
+                            <TextView android:text="STATUS" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:gravity="center" android:textSize="14sp"/>
+                            <TextView android:text="ACTIONS" android:textColor="@color/white" android:textStyle="bold" android:padding="12dp" android:gravity="center" android:textSize="14sp"/>
+                        </TableRow>
+
+                        <!-- Dynamic rows will be added here -->
+                    </TableLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</FrameLayout>

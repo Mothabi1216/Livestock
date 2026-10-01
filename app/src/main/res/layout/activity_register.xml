@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".RegisterActivity">
+
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pic0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#99000000" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:id="@+id/glass_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="32dp"
+            android:background="@drawable/glass_background"
+            android:elevation="12dp"
+            android:orientation="vertical"
+            android:padding="32dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/register_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Register"
+                android:textColor="@color/white"
+                android:textSize="32sp"
+                android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_name"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:hint="Full Name"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_full_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPersonName"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_email"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Email"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconDrawable="@android:drawable/ic_dialog_email"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textEmailAddress"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_phone"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Phone"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:startIconDrawable="@android:drawable/ic_menu_call"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_phone"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/layout_password"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:hint="Password"
+                android:textColorHint="@color/white"
+                app:boxStrokeColor="@color/white"
+                app:hintTextColor="@color/white"
+                app:passwordToggleEnabled="true"
+                app:passwordToggleTint="@color/white"
+                app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                app:startIconTint="@color/white">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:textColor="@color/white" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <!-- Profile Picture Upload Field -->
+            <LinearLayout
+                android:id="@+id/layout_profile_pic"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="8dp"
+                android:background="@drawable/glass_background"
+                android:backgroundTint="#1AFFFFFF"
+                android:clickable="true"
+                android:focusable="true">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/img_profile_preview"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:padding="2dp"
+                    android:src="@android:drawable/ic_menu_camera"
+                    app:contentPadding="8dp"
+                    app:shapeAppearanceOverlay="@style/CircleImage"
+                    app:strokeColor="@color/white"
+                    app:strokeWidth="1dp"
+                    android:scaleType="centerInside"
+                    android:tint="@color/white" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Upload Profile Picture"
+                    android:textColor="@color/white"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register_submit"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/beautiful_green"
+                android:text="REGISTER"
+                android:textStyle="bold"
+                app:cornerRadius="12dp" />
+
+            <TextView
+                android:id="@+id/tv_goto_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:text="Already have an account? Login"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btn_return_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:padding="8dp"
+                android:text="Return Home"
+                android:textColor="@color/white"
+                android:textSize="12sp"
+                android:alpha="0.7"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

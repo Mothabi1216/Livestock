@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@color/dark_grey">
+
+        <TextView
+            android:id="@+id/tv_dialog_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="BROADCAST DISEASE ALERT"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="24dp"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alert Title"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alert_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Disease Name"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alert_disease"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Severity Level"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white">
+            <AutoCompleteTextView
+                android:id="@+id/spinner_alert_seriousness"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="none"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="District / Location"
+            android:layout_marginBottom="12dp"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alert_district"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Alert Message / Instructions"
+            app:boxStrokeColor="@color/white"
+            app:hintTextColor="@color/white"
+            android:layout_marginBottom="24dp">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_alert_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minLines="3"
+                android:gravity="top"
+                android:textColor="@color/white"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_cancel_alert"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="CANCEL"
+                android:layout_marginEnd="8dp"
+                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                app:strokeColor="#FF5252"
+                android:textColor="#FF5252"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_broadcast_alert"
+                android:layout_width="0dp"
+                android:layout_height="55dp"
+                android:layout_weight="1"
+                android:text="SEND BROADCAST"
+                android:layout_marginStart="8dp"
+                android:backgroundTint="#4CAF50"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

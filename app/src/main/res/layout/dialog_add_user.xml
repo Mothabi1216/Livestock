@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/admin_dashboard" />
+
+    <!-- Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/dark_grey"
+            android:elevation="8dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_back"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="New Veterinary Officer"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:letterSpacing="0.05"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#26FFFFFF"
+                    app:strokeColor="#33FFFFFF"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="OFFICER INFORMATION"
+                            android:textColor="@color/white"
+                            android:alpha="0.7"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.1"
+                            android:layout_marginBottom="20dp"
+                            android:layout_gravity="start"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Full Names"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_full_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPersonName"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email Address"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_dialog_email"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Phone Number"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/stat_sys_phone_call"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            app:passwordToggleEnabled="true"
+                            app:passwordToggleTint="@color/white"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_lock_idle_lock"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_password"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPassword"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:id="@+id/til_profile_pic"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Profile Picture"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_menu_camera"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="24dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_pic_display"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Click to add Photo"
+                                android:focusable="false"
+                                android:clickable="true"
+                                android:cursorVisible="false"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_save_user"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:text="REGISTER OFFICER"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="12dp"
+                            android:backgroundTint="#4CAF50"
+                            app:elevation="8dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

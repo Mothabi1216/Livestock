@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/admin_dashboard" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/dark_grey"
+            android:elevation="8dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_back_detail"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Case Investigation"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true" />
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_report_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#26FFFFFF"
+                    app:strokeWidth="4dp"
+                    app:strokeColor="#00000000">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginBottom="12dp">
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:orientation="vertical">
+                                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="REPORT ID" android:textColor="@color/white" android:alpha="0.5" android:textSize="10sp" android:textStyle="bold"/>
+                                <TextView android:id="@+id/tv_detail_id" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="18sp" android:textStyle="bold"/>
+                            </LinearLayout>
+                            <TextView
+                                android:id="@+id/tv_detail_severity"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/rounded_bg"
+                                android:paddingHorizontal="12dp"
+                                android:paddingVertical="4dp"
+                                android:text="NORMAL"
+                                android:textColor="@color/white"
+                                android:textSize="12sp"
+                                android:textStyle="bold"/>
+                        </RelativeLayout>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="FARMER" android:textColor="@color/white" android:alpha="0.5" android:textSize="10sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tv_detail_farmer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="18sp" android:textStyle="bold" android:layout_marginBottom="12dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ANIMAL" android:textColor="@color/white" android:alpha="0.5" android:textSize="10sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tv_detail_animal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="16sp" android:layout_marginBottom="12dp"/>
+
+                        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LOCATION" android:textColor="@color/white" android:alpha="0.5" android:textSize="10sp" android:textStyle="bold"/>
+                        <TextView android:id="@+id/tv_detail_location" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="14sp" android:layout_marginBottom="12dp"/>
+
+                        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal" android:weightSum="2">
+                             <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LATITUDE" android:textColor="@color/white" android:alpha="0.5" android:textSize="10sp" android:textStyle="bold"/>
+                                 <TextView android:id="@+id/tv_detail_latitude" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="14sp"/>
+                             </LinearLayout>
+                             <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:orientation="vertical">
+                                 <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LONGITUDE" android:textColor="@color/white" android:alpha="0.5" android:textSize="10sp" android:textStyle="bold"/>
+                                 <TextView android:id="@+id/tv_detail_longitude" android:layout_width="wrap_content" android:layout_height="wrap_content" android:textColor="@color/white" android:textSize="14sp"/>
+                             </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp">
+                    <TextView
+                        android:id="@+id/tv_label_evidence"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="EVIDENCE IMAGES"
+                        android:textColor="@color/white"
+                        android:alpha="0.7"
+                        android:textSize="12sp"
+                        android:textStyle="bold"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"/>
+                    <TextView
+                        android:id="@+id/tv_image_counter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="1/3"
+                        android:textColor="@color/white"
+                        android:alpha="0.7"
+                        android:textSize="12sp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"/>
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="250dp"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginBottom="16dp">
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+                        <ImageView
+                            android:id="@+id/img_evidence_main"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/pic2"/>
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="#1A000000"/>
+
+                        <ImageButton
+                            android:id="@+id/btn_prev_image"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentStart="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@android:drawable/ic_media_previous"
+                            app:tint="@color/white"
+                            android:contentDescription="Previous Image" />
+
+                        <ImageButton
+                            android:id="@+id/btn_next_image"
+                            android:layout_width="48dp"
+                            android:layout_height="48dp"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentEnd="true"
+                            android:background="?attr/selectableItemBackgroundBorderless"
+                            android:src="@android:drawable/ic_media_next"
+                            app:tint="@color/white"
+                            android:contentDescription="Next Image" />
+                    </RelativeLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="ANIMAL LOCATION MAP"
+                    android:textColor="@color/white"
+                    android:alpha="0.7"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="12dp"/>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/card_map_section"
+                    android:layout_width="match_parent"
+                    android:layout_height="300dp"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginBottom="24dp">
+                    <org.osmdroid.views.MapView
+                        android:id="@+id/map_view"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- Vet Response Section -->
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#33FFFFFF">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Scheduled Visit Date"
+                            android:layout_marginBottom="12dp"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_visit_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="false"
+                                android:clickable="true"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Response/Diagnosis"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_vet_response"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="2"
+                    android:layout_marginBottom="32dp">
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_reject"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:text="REJECT"
+                        android:backgroundTint="#FF5252"
+                        android:layout_marginEnd="8dp"/>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btn_accept"
+                        android:layout_width="0dp"
+                        android:layout_height="60dp"
+                        android:layout_weight="1"
+                        android:text="APPROVE"
+                        android:backgroundTint="#4CAF50"
+                        android:layout_marginStart="8dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

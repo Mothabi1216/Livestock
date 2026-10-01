@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <!-- Full-screen Background Image -->
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/pic0" />
+
+    <!-- Dark Overlay for Readability -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/overlay_dark" />
+
+    <!-- Header Section -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp"
+        android:background="@color/dark_grey"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/app_logo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="LIVESTOCK"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:letterSpacing="0.1"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/btn_about"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:text="About Us"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/btn_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:padding="8dp"
+                android:text="Contact Us"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textSize="14sp" />
+        </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- Main Title (Hero Section) -->
+    <LinearLayout
+        android:id="@+id/hero_section"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/button_container"
+        app:layout_constraintTop_toBottomOf="@+id/header"
+        app:layout_constraintVertical_chainStyle="packed">
+
+        <TextView
+            android:id="@+id/main_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:lineSpacingExtra="8dp"
+            android:shadowColor="#80000000"
+            android:shadowDx="2"
+            android:shadowDy="2"
+            android:shadowRadius="4"
+            android:text="LIVESTOCK\nMANAGEMENT\nSYSTEM"
+            android:textColor="@color/white"
+            android:textSize="36sp"
+            android:textStyle="bold" />
+
+        <View
+            android:layout_width="60dp"
+            android:layout_height="4dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/white" />
+    </LinearLayout>
+
+    <!-- Buttons Section -->
+    <LinearLayout
+        android:id="@+id/button_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="32dp"
+        app:layout_constraintBottom_toTopOf="@+id/footer"
+        app:layout_constraintTop_toBottomOf="@+id/hero_section">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_login"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:maxWidth="300dp"
+            android:text="LOGIN"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:backgroundTint="@null"
+            android:background="@drawable/button_background"
+            app:cornerRadius="30dp"
+            app:elevation="4dp" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_register"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:maxWidth="300dp"
+            android:layout_marginTop="16dp"
+            android:text="REGISTER"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:cornerRadius="30dp"
+            app:strokeColor="@color/white"
+            app:strokeWidth="2dp" />
+    </LinearLayout>
+
+    <!-- Footer Section -->
+    <LinearLayout
+        android:id="@+id/footer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp"
+        android:background="@color/beautiful_green"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <View
+            android:layout_width="100dp"
+            android:layout_height="1dp"
+            android:layout_marginBottom="16dp"
+            android:alpha="0.3"
+            android:background="@color/white" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:alpha="0.7"
+            android:gravity="center"
+            android:text="© 2026 Livestock Management System.\nAll rights reserved."
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

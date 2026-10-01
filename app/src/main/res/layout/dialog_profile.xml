@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/admin_dashboard" />
+
+    <!-- Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header - Matching Add Vet Officer -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/dark_grey"
+            android:elevation="8dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_back_profile"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:id="@+id/tv_profile_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="My Profile"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:letterSpacing="0.05"/>
+        </RelativeLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:fillViewport="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="24dp"
+                android:gravity="center_horizontal">
+
+                <!-- Circular Profile Picture Upload Section -->
+                <RelativeLayout
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:layout_marginBottom="24dp">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:id="@+id/img_profile_edit"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:padding="4dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/pic2"
+                        app:shapeAppearanceOverlay="@style/CircleImage"
+                        app:strokeColor="@color/white"
+                        app:strokeWidth="4dp"
+                        android:elevation="8dp"
+                        android:clickable="true"
+                        android:focusable="true"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_margin="8dp"
+                        app:cardCornerRadius="20dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardElevation="10dp">
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:padding="8dp"
+                            android:src="@android:drawable/ic_menu_camera"
+                            app:tint="@color/black"/>
+                    </com.google.android.material.card.MaterialCardView>
+                </RelativeLayout>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:cardElevation="6dp"
+                    android:layout_marginBottom="16dp"
+                    android:backgroundTint="#26FFFFFF"
+                    app:strokeColor="#33FFFFFF"
+                    app:strokeWidth="1dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PERSONAL INFORMATION"
+                            android:textColor="@color/white"
+                            android:alpha="0.7"
+                            android:textSize="12sp"
+                            android:textStyle="bold"
+                            android:letterSpacing="0.1"
+                            android:layout_marginBottom="20dp"/>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Full Name"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_menu_myplaces"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_name"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textPersonName"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Email Address"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_dialog_email"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:enabled="false"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_email"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="textEmailAddress"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Phone Number"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/stat_sys_phone_call"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="16dp"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_phone"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:inputType="phone"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Role"
+                            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                            app:startIconDrawable="@android:drawable/ic_menu_info_details"
+                            app:startIconTint="@color/white"
+                            android:layout_marginBottom="24dp"
+                            android:enabled="false"
+                            android:textColorHint="@color/white"
+                            app:hintTextColor="@color/white"
+                            app:boxStrokeColor="@color/white"
+                            app:boxStrokeWidth="1dp">
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/et_profile_role"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"/>
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <com.google.android.material.button.MaterialButton
+                            android:id="@+id/btn_update_profile"
+                            android:layout_width="match_parent"
+                            android:layout_height="60dp"
+                            android:text="SAVE CHANGES"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            app:cornerRadius="12dp"
+                            android:backgroundTint="#4CAF50"
+                            app:elevation="8dp"/>
+                    </LinearLayout>
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+</FrameLayout>

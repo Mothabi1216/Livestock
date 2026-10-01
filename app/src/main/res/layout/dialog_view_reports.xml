@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image -->
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/admin_dashboard" />
+
+    <!-- Overlay -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#B3000000" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!-- Header -->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:paddingHorizontal="16dp"
+            android:background="@color/dark_grey"
+            android:elevation="8dp"
+            android:gravity="center_vertical">
+
+            <ImageButton
+                android:id="@+id/btn_back_reports"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="?attr/selectableItemBackgroundBorderless"
+                android:src="@android:drawable/ic_menu_revert"
+                app:tint="@color/white"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:contentDescription="Back" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Disease Reports Registry"
+                android:textColor="@color/white"
+                android:textSize="22sp"
+                android:textStyle="bold"
+                android:layout_centerInParent="true"
+                android:letterSpacing="0.05"/>
+        </RelativeLayout>
+
+        <!-- Glass-morphism Table Container -->
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="16dp"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="12dp"
+            android:backgroundTint="#26FFFFFF"
+            app:strokeColor="#33FFFFFF"
+            app:strokeWidth="1dp">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scrollbars="horizontal">
+
+                <ScrollView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:scrollbars="vertical">
+
+                    <TableLayout
+                        android:id="@+id/table_reports"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="12dp"
+                        android:stretchColumns="*">
+
+                        <!-- Header Row -->
+                        <TableRow
+                            android:background="@color/dark_grey"
+                            android:paddingVertical="16dp"
+                            android:paddingHorizontal="8dp">
+                            <TextView android:text="REPORT ID" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="FARMER NAME" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="SEVERITY" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="ANIMAL TYPE" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="DESCRIPTION" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="SYMPTOMS" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="SUSPECTED DISEASE" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="AFFECTED" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp" android:gravity="center"/>
+                            <TextView android:text="LOCATION" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="VILLAGE" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                            <TextView android:text="DATE OBSERVED" android:textColor="@color/white" android:textStyle="bold" android:padding="16dp" android:textSize="14sp"/>
+                        </TableRow>
+
+                        <!-- Spacing view -->
+                        <View android:layout_height="2dp" android:background="@color/white" android:alpha="0.2"/>
+
+                    </TableLayout>
+                </ScrollView>
+            </HorizontalScrollView>
+        </com.google.android.material.card.MaterialCardView>
+    </LinearLayout>
+</FrameLayout>
